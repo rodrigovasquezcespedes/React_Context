@@ -32,7 +32,7 @@ const Gallery = ({ char }) => {
           <FontAwesomeIcon
               icon={faHeart}
               style={{
-                color: char.like ? 'red' : 'white',
+                color: char.like ? 'red' : 'silver',
                 cursor: 'pointer'
               }}
             />
