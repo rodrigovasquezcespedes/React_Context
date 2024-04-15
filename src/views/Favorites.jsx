@@ -7,13 +7,11 @@ import Row from 'react-bootstrap/Row'
 const Favorites = () => {
   const { character } = useContext(CharacterContext)
   return (
-    
-    <Container >
-       <h1 className='text-center'>Personaje Favoritos de Juego de Tronos</h1>
+    <Container>
+      <h1 className='text-center'>Personaje Favoritos de Juego de Tronos</h1>
       <Row xs='auto'>
-       
         {character &&
-          character.filter(char=>char.like).map(char => <Gallery key={char.id} char={char} />)}
+          character.filter(char => char.like).map(char => <Gallery key={char.id} char={char} />)}
       </Row>
     </Container>
   )

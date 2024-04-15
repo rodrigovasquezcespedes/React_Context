@@ -1,5 +1,5 @@
 import Card from 'react-bootstrap/Card'
-import { useState, useContext } from 'react'
+import { useContext } from 'react'
 import { CharacterContext } from '../context/CharacterContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
@@ -10,14 +10,14 @@ const Gallery = ({ char }) => {
   const handleHeartClick = id => {
     const newcharacter = character.map(char => {
       if (char.id === id) {
-        return{
+        return {
           ...char,
           like: !char.like
         }
       }
       return char
     })
-    setCharacter(newcharacter) 
+    setCharacter(newcharacter)
     console.log(newcharacter)
   }
   return (
@@ -29,13 +29,7 @@ const Gallery = ({ char }) => {
       >
         <Card.Header className='position-absolute top-0 end-0 m-2 border-0 '>
           <span onClick={() => handleHeartClick(char.id)}>
-          <FontAwesomeIcon
-              icon={faHeart}
-              style={{
-                color: char.like ? 'red' : 'silver',
-                cursor: 'pointer'
-              }}
-            />
+            <FontAwesomeIcon icon={faHeart} style={{color: char.like ? 'red' : 'silver',cursor: 'pointer'}} />
           </span>
         </Card.Header>
         <Card.Img className='cardItem h-75 img-thumbnail' src={char.imageUrl} />

@@ -7,11 +7,9 @@ import Row from 'react-bootstrap/Row'
 const Home = () => {
   const { character } = useContext(CharacterContext)
   return (
-    
-    <Container >
-       <h1 className='text-center'>Personaje de Juego de Tronos</h1>
+    <Container>
+      <h1 className='text-center'>Personaje de Juego de Tronos</h1>
       <Row xs='auto'>
-       
         {character &&
           character.map(char => <Gallery key={char.id} char={char} />)}
       </Row>
